@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const inicio = ["unacadena", 3, 9, 1, 10, 500, 1, 10, true];
+        //const inicio = [59, 96,"unacadena", 3, 9, 1, false, 10, 500, 1, 10, true, 5, 67, "uno"];
+        //const inicio = [67, 5,"unacadena", 3, 9, 1, false, 10, 5000, 15, 10, true, 55, 37, "uno"];
+        //const inicio = [-67, 5,"unacadena", 3, -9, 1, false, 10, 5000, 15, -10, true, 55, 37, "uno"];
+        
+        let arrNumber = []
+
+        console.log(inicio);
+        document.write("Arreglo de inicio: " + inicio + "<br></br>");
+
+        for (let i = 0; i < inicio.length; i++) {
+            if (typeof inicio[i] === 'number') {
+                arrNumber.push(inicio[i])
+            }
+        }
+
+        function ordenarMayoraMenor(arrNumber) {
+
+            for (let j = 0; j < arrNumber.length - 1; j++) {
+                for (let k = 0; k < arrNumber.length - j - 1; k++) {
+                    if (arrNumber[k] < arrNumber[k + 1]) {
+                        [arrNumber[k + 1], arrNumber[k]] = [arrNumber[k], arrNumber[k + 1]];
+                    }
+                }
+            }
+        }
+
+        try {
+            console.log(arrNumber);
+            document.write("Arreglo de solo números: " + arrNumber + "<br></br>");
+            ordenarMayoraMenor(arrNumber);
+            console.log(arrNumber);
+            document.write("Arreglo de números ordenados de Mayor a Menor: " + arrNumber + "<br></br>");
+
+        } catch (e) {
+            console.log('Error: ${e.message}');
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
